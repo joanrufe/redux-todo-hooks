@@ -1,4 +1,5 @@
 import React from "react";
+import { List } from "semantic-ui-react";
 import Todo from "./Todo";
 import { useDispatch, useTodos } from "../store";
 import { toggleTodo } from "../actions";
@@ -8,17 +9,18 @@ const TodoList = () => {
   const todos = useTodos();
 
   return (
-    <ul>
+    <List>
       {todos.map(todo => (
-        <Todo
-          key={todo.id}
-          {...todo}
-          onClick={() => {
-            dispatch(toggleTodo(todo.id));
-          }}
-        />
+        <List.Item key={todo.id}>
+          <Todo
+            {...todo}
+            onClick={() => {
+              dispatch(toggleTodo(todo.id));
+            }}
+          />
+        </List.Item>
       ))}
-    </ul>
+    </List>
   );
 };
 

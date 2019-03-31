@@ -1,10 +1,13 @@
 import React from "react";
 import Link from "./Link";
 import { VisibilityFilters, setVisibilityFilter } from "../actions";
-import { useDispatch } from "../store";
+import { useDispatch, useMappedState } from "../store";
 
-const Footer = ({ visibilityFilter }) => {
+const Footer = () => {
   const dispatch = useDispatch();
+  const visibilityFilter = useMappedState(
+    ({ visibilityFilter }) => visibilityFilter
+  );
 
   return (
     <div>

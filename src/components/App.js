@@ -5,7 +5,7 @@ import TodoList from "./TodoList";
 
 const App = () => {
   return (
-    <div>
+    <div style={{ margin: 20 }}>
       <AddTodo />
       <TodoList />
       <Footer />

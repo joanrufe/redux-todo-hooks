@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Form } from "semantic-ui-react";
 import { useDispatch } from "../store";
 import { addTodo } from "../actions";
 
@@ -8,7 +9,7 @@ const AddTodo = () => {
 
   return (
     <div>
-      <form
+      <Form
         onSubmit={e => {
           e.preventDefault();
           if (!inputValue.trim()) {
@@ -18,13 +19,19 @@ const AddTodo = () => {
           setInputValue("");
         }}
       >
-        <input
-          value={inputValue}
-          onChange={e => setInputValue(e.target.value)}
-        />
-        <button type="submit">Add Todo</button>
-      </form>
+        <Form.Group>
+          <Form.Input
+            value={inputValue}
+            onChange={e => setInputValue(e.target.value)}
+            placeholder="Add todo"
+          />
+          <Form.Button appearance="primary" type="submit">
+            Add Todo
+          </Form.Button>
+        </Form.Group>
+      </Form>
     </div>
   );
 };
+
 export default AddTodo;

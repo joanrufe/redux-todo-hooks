@@ -4,6 +4,7 @@ import App from "./components/App";
 import mainReducer from "./reducers";
 import { makeStore, StoreContext } from "./store";
 import ErrorBoundary from "react-error-boundary";
+import "semantic-ui-css/semantic.min.css";
 
 const store = makeStore(mainReducer);
 
