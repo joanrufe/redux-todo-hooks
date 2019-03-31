@@ -8,6 +8,7 @@ const Todo = ({ onClick, completed, text, onDelete }) => {
         defaultChecked={completed}
         onChange={onClick}
         label={text}
+        style={{ textDecoration: completed ? "line-through" : "none" }}
         value="Controlled Checkbox"
         name="controlled-checkbox"
       />

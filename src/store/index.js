@@ -9,7 +9,7 @@ export const INITIAL_STATE = {
   visibilityFilter: VisibilityFilters.SHOW_ALL,
   todos: [
     {
-      id: 0,
+      id: -1,
       completed: true,
       text: "default todo"
     }

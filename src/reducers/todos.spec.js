@@ -129,6 +129,11 @@ describe("todos reducer", () => {
             text: "Use Redux",
             completed: false,
             id: 0
+          },
+          {
+            text: "Run the tests",
+            completed: true,
+            id: 1
           }
         ],
         {
@@ -136,6 +141,12 @@ describe("todos reducer", () => {
           id: 0
         }
       )
-    ).toEqual([]);
+    ).toEqual([
+      {
+        text: "Run the tests",
+        completed: true,
+        id: 1
+      }
+    ]);
   });
 });

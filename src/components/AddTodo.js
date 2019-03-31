@@ -24,10 +24,8 @@ const AddTodo = () => {
             value={inputValue}
             onChange={e => setInputValue(e.target.value)}
             placeholder="Add todo"
+            action="Add"
           />
-          <Form.Button appearance="primary" type="submit">
-            Add Todo
-          </Form.Button>
         </Form.Group>
       </Form>
     </div>
