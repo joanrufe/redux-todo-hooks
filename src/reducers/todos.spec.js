@@ -1,4 +1,5 @@
-import todos from "./todos";
+import todos from "./todosReducer";
+import { actionsEnum } from "../actions";
 
 describe("todos reducer", () => {
   it("should handle initial state", () => {
@@ -8,7 +9,7 @@ describe("todos reducer", () => {
   it("should handle ADD_TODO", () => {
     expect(
       todos([], {
-        type: "ADD_TODO",
+        type: actionsEnum.ADD_TODO,
         text: "Run the tests",
         id: 0
       })
@@ -30,7 +31,7 @@ describe("todos reducer", () => {
           }
         ],
         {
-          type: "ADD_TODO",
+          type: actionsEnum.ADD_TODO,
           text: "Use Redux",
           id: 1
         }
@@ -63,7 +64,7 @@ describe("todos reducer", () => {
           }
         ],
         {
-          type: "ADD_TODO",
+          type: actionsEnum.ADD_TODO,
           text: "Fix the tests",
           id: 2
         }
@@ -103,7 +104,7 @@ describe("todos reducer", () => {
           }
         ],
         {
-          type: "TOGGLE_TODO",
+          type: actionsEnum.TOGGLE_TODO,
           id: 1
         }
       )
@@ -119,5 +120,22 @@ describe("todos reducer", () => {
         id: 0
       }
     ]);
+  });
+  it("should handle TOGGLE_TODO", () => {
+    expect(
+      todos(
+        [
+          {
+            text: "Use Redux",
+            completed: false,
+            id: 0
+          }
+        ],
+        {
+          type: actionsEnum.DELETE_TODO,
+          id: 0
+        }
+      )
+    ).toEqual([]);
   });
 });

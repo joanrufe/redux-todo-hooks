@@ -7,7 +7,13 @@ import useTodos from "./useTodos";
 export { useTodos };
 export const INITIAL_STATE = {
   visibilityFilter: VisibilityFilters.SHOW_ALL,
-  todos: []
+  todos: [
+    {
+      id: 0,
+      completed: true,
+      text: "default todo"
+    }
+  ]
 };
 
 const thunk = store => next => action =>
